@@ -1,0 +1,59 @@
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: rgba(255, 193, 7, 1);
+    --secundario: #0097a7;
+    --gris: #757575;
+}
+
+.escuchanos-h {
+    text-align: center;
+    padding-top: 4rem;
+    font-size: 2.5rem;
+}
+
+/* ----- DESKTOP ----- */
+
+.logos-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas iguales */
+    gap: 3rem;
+    justify-items: center;
+    align-items: center;
+    padding: 5rem 2rem;
+    max-width: 100rem;
+    margin: 0 auto;
+}
+
+.logo-plat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.logo-plat img {
+    width: 100%;
+    max-width: 30rem;
+    height: auto;
+    padding: 1.5rem;
+}
+
+.logo-plat:hover {
+    transform: scale(1.05);
+}
+
+/* ----- MQ ----- */
+
+@media (max-width: 768px) { 
+    .logos-box {
+        display: flex;
+        flex-direction: column; /* Cambia a 1 sola columna vertical */
+        gap: 2rem;
+        padding: 3rem 2rem;
+    }
+
+    .logo-plat img {
+        max-width: 28rem; /* Tamaño ajustado a pantallas pequeñas */
+    }
+}

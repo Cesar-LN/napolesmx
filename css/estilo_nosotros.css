@@ -1,0 +1,125 @@
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: rgba(255, 193, 7, 1);
+    --secundario: #0097a7;
+    --gris: #757575;
+}
+
+/* ----- BANNER WRAP ----- */
+
+.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('../Media/Imagenes/fondo_b.jpg');
+    background-position: center;
+    background-size: cover; /* Asegura que la imagen de fondo cubra todo el espacio sin deformarse */
+    width: 100%;
+    min-height: 40rem; /* Usamos min-height para que crezca libremente si el texto es largo */
+    padding: 3rem 2rem; /* Espaciado de seguridad alrededor */
+}
+
+.wrap-texto {
+    color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.wrap-texto h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Se elimina el width fijo y se adopta un diseño fluido */
+.parrafo_nosotros {
+    width: 100%;
+    max-width: 60rem; /* En computadoras mide máximo 60rem, en móviles se adapta al 100% */
+    font-size: 1.8rem;
+    text-align: justify;
+    line-height: 1.6; /* Mejora la legibilidad del texto */
+    margin: 0 auto;
+}
+
+/* ----- SECCIÓN INTEGRANTES ----- */
+
+.nosotros_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4rem 0;
+    font-size: 1.5rem;
+    padding: 0 2rem;
+}
+
+.nosotros_box h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.integrantes_box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem; /* Espacio uniforme entre cada integrante */
+    width: 100%;
+    max-width: 120rem;
+}
+
+.integrante_row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.integrante_row h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.imagen_nosotros {
+    width: 28rem;            /* Ancho fijo para todas las fotos */
+    height: 35rem;           /* Altura fija para que midan exactamente lo mismo */
+    object-fit: cover;       /* Ajusta la imagen al marco sin deformarla ni estirarla */
+    object-position: center; /* Centra el encuadre de la foto */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.imagen_nosotros:hover {
+    transform: scale(1.03);
+}
+
+.integrante_row p {
+    font-size: 1.8rem;
+    margin-top: 1rem;
+}
+
+/* ----- MQ ----- */
+
+@media (max-width: 768px) { 
+    .wrap {
+        min-height: 35rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .wrap-texto h2 {
+        font-size: 2.4rem;
+    }
+
+    .parrafo_nosotros {
+        font-size: 1.5rem;
+        text-align: center; /* Alineación centrada para pantallas pequeñas */
+    }
+
+    .imagen_nosotros {
+        width: 24rem;  
+        height: 30rem; /* Mantienen la misma proporción pero con menor tamaño */
+    }
+}

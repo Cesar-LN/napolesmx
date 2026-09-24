@@ -1,0 +1,152 @@
+/* Declaración de la fuente personalizada */
+@font-face {
+    font-family: 'Equinox';
+    src: url('../fuentes/Equinox\ Regular.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Custom properties */
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: rgba(255, 193, 7, 1);
+    --secundario: #0097a7;
+    --gris: #757575;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+/* Resuelve el box-model */
+*, *:before, *:after {
+    box-sizing: inherit;
+} 
+
+/* Aplicar fuente a elementos globales */
+h1, h2, h3, p, a {
+    font-family: 'Equinox', sans-serif;
+}
+
+body {
+    background-color: #F7F4F0; 
+}
+
+footer{
+    font-family: 'Equinox', sans-serif;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* ----- HEADER Y ESTRUCTURA BASE ----- */
+
+.header {
+    width: 100%;
+}
+
+.header-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.titulo h1 {
+    font-size: 7rem;
+    margin: 2rem 0;
+    color: var(--oscuro);
+}
+
+/* El botón del menú inicia oculto en computadoras */
+.menu-toggle {
+    display: none;
+}
+
+/* Menú en Escritorio */
+.Menu-nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 0;
+    margin: 0 0 4rem 0;
+}
+
+.Menu-nav li {
+    list-style: none;
+    margin: 0;
+}
+
+.Menu-nav a {
+    color: var(--oscuro);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.Menu-nav a:hover {
+    transform: scale(1.15);
+}
+
+/* ----- RESPONSIVE: MENÚ MÓVIL ----- */
+
+@media (max-width: 768px) {
+
+    .header-top {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+
+    .titulo h1 {
+        font-size: 3.5rem;
+        margin: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 3rem;
+        cursor: pointer;
+    }
+
+    /* Menú móvil desplegable con animación */
+    .Menu-nav {
+        opacity: 0;
+        visibility: hidden;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 0.3s ease, max-height 0.3s ease, visibility 0.3s ease;
+    }
+
+    /* Estado activo al abrir el menú */
+    .Menu-nav.active {
+        opacity: 1;
+        visibility: visible;
+        max-height: 300px;
+    }
+
+    .Menu-nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .Menu-nav a {
+        font-size: 1.8rem;
+    }
+}

@@ -1,0 +1,83 @@
+/* ----- SECCIÓN VIDEO / IMAGEN PROMO ----- */
+
+.video-promo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 0 2rem;
+}
+
+.video-promo-container h2 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.video-promo {
+    width: 100%;
+    max-width: 60rem; /* Evita que la imagen se desborde en móvil */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.video-promo:hover {
+    transform: scale(1.05);
+}
+
+/* ----- SECCIÓN NEWSLETTER ----- */
+
+.newsletter-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5rem 0 2rem 0;
+    font-size: 1.5rem;
+}
+
+.newsletter-box h3 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Equinox', sans-serif;
+}
+
+.newsletter-form input {
+    padding: 1.5rem;
+    width: 30rem;
+    max-width: 100%;
+    text-align: center;
+}
+
+.newsletter-form button {
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    color: var(--blanco);
+    background-color: var(--oscuro);
+    border: none;
+    font-family: 'Equinox', sans-serif;
+}
+
+.newsletter-form button:hover {
+    transform: scale(1.05);
+}
+
+/* ----- RESPONSIVE: COMPONENTES ----- */
+
+@media (max-width: 768px) {
+    .newsletter-box {
+        margin: 5rem 0 2rem 0;
+        font-size: 1.05rem;
+    }
+
+    .newsletter-box h3 {
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+    }
+}
